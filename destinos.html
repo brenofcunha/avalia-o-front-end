@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destinos – Horizonte Blue</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header>
+      <div class="header-inner">
+        <h1 class="logo">Horizonte Blue</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="destinos.html" class="active">Destinos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- Título da Página -->
+      <section class="page-hero">
+        <h2>Catálogo de Experiências</h2>
+        <p>Escolha o destino dos seus sonhos e solicite um orçamento personalizado.</p>
+      </section>
+
+      <!-- Filtros -->
+      <section class="filters" id="filtros">
+        <h2>Filtrar por Tipo de Viagem</h2>
+        <form class="filter-form">
+          <label class="filter-label">
+            <input type="checkbox" name="tipo" value="praia" />
+            🏖️ Praia
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" name="tipo" value="montanha" />
+            🏔️ Montanha
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" name="tipo" value="neve" />
+            ❄️ Neve
+          </label>
+        </form>
+      </section>
+
+      <!-- Cards de Destinos -->
+      <section class="destinations" id="destinos">
+        <h2>Nossos Destinos</h2>
+        <div class="cards-grid">
+
+          <!-- Card 1 – Maldivas -->
+          <article class="card" data-tipo="praia">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
+              alt="Vista aérea das ilhas Maldivas com águas cristalinas"
+            />
+            <div class="card-body">
+              <h3>Maldivas</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Tropical, ensolarado o ano todo</dd>
+                <dt>Moeda</dt>
+                <dd>Rufiyaa (MVR)</dd>
+                <dt>Idioma</dt>
+                <dd>Divehi</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 2 – Patagônia -->
+          <article class="card" data-tipo="montanha">
+            <img
+              src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80"
+              alt="Torres del Paine na Patagônia argentina"
+            />
+            <div class="card-body">
+              <h3>Patagônia</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Frio e ventoso, verões amenos</dd>
+                <dt>Moeda</dt>
+                <dd>Peso Argentino (ARS)</dd>
+                <dt>Idioma</dt>
+                <dd>Espanhol</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 3 – Alpes Suíços -->
+          <article class="card" data-tipo="neve">
+            <img
+              src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80"
+              alt="Montanhas cobertas de neve nos Alpes Suíços"
+            />
+            <div class="card-body">
+              <h3>Alpes Suíços</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Frio intenso no inverno, neve garantida</dd>
+                <dt>Moeda</dt>
+                <dd>Franco Suíço (CHF)</dd>
+                <dt>Idioma</dt>
+                <dd>Alemão, Francês, Italiano</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 4 – Fernando de Noronha -->
+          <article class="card" data-tipo="praia">
+            <img
+              src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600&q=80"
+              alt="Baía do Sancho em Fernando de Noronha"
+            />
+            <div class="card-body">
+              <h3>Fernando de Noronha</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Tropical seco, calor o ano todo</dd>
+                <dt>Moeda</dt>
+                <dd>Real (BRL)</dd>
+                <dt>Idioma</dt>
+                <dd>Português</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 5 – Nepal -->
+          <article class="card" data-tipo="montanha">
+            <img
+              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80"
+              alt="Vista do Himalaia com pico nevado ao fundo"
+            />
+            <div class="card-body">
+              <h3>Nepal – Himalaia</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Variável, frio em altitudes elevadas</dd>
+                <dt>Moeda</dt>
+                <dd>Rupia Nepalesa (NPR)</dd>
+                <dt>Idioma</dt>
+                <dd>Nepalês</dd>
+              </dl>
+            </div>
+          </article>
+
+          <!-- Card 6 – Lapônia -->
+          <article class="card" data-tipo="neve">
+            <img
+              src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=600&q=80"
+              alt="Aurora boreal sobre a Lapônia finlandesa"
+            />
+            <div class="card-body">
+              <h3>Lapônia Finlandesa</h3>
+              <dl>
+                <dt>Clima</dt>
+                <dd>Ártico, invernos rigorosos e longos</dd>
+                <dt>Moeda</dt>
+                <dd>Euro (EUR)</dd>
+                <dt>Idioma</dt>
+                <dd>Finlandês, Sueco</dd>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Formulário de Orçamento -->
+      <section class="quote-form" id="orcamento">
+        <h2>Solicite seu Orçamento</h2>
+        <p class="section-subtitle">Preencha o formulário abaixo e entraremos em contato em até 24 horas.</p>
+        <form action="#" method="post" class="form">
+          <div class="form-group">
+            <label for="nome">Nome completo <span class="required">*</span></label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail <span class="required">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="seuemail@exemplo.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="data">Data pretendida da viagem <span class="required">*</span></label>
+            <input
+              type="date"
+              id="data"
+              name="data"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagens adicionais</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              placeholder="Descreva seu destino preferido, número de viajantes, preferências especiais..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Enviar Solicitação</button>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>&copy; 2025 Horizonte Blue – Agência de Viagens. Todos os direitos reservados.</p>
+        <address>
+          <p>📧 <a href="mailto:contato@horizonteblue.com.br">contato@horizonteblue.com.br</a></p>
+          <p>📞 <a href="tel:+551140002000">(11) 4000-2000</a></p>
+          <p>📍 Av. das Viagens, 123 – São Paulo, SP</p>
+        </address>
+      </div>
+    </footer>
+
+  </body>
+</html>
