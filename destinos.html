@@ -44,7 +44,9 @@
             <input type="checkbox" name="tipo" value="neve" />
             ❄️ Neve
           </label>
+          <button type="button" id="limpar-filtros" class="btn-secondary">Limpar filtros</button>
         </form>
+        <p id="filtro-status" class="filter-status">Exibindo todos os destinos.</p>
       </section>
 
       <!-- Cards de Destinos -->
@@ -53,7 +55,7 @@
         <div class="cards-grid">
 
           <!-- Card 1 – Maldivas -->
-          <article class="card" data-tipo="praia">
+          <article class="card" data-tipo="praia" data-destino="Maldivas">
             <img
               src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
               alt="Vista aérea das ilhas Maldivas com águas cristalinas"
@@ -72,7 +74,7 @@
           </article>
 
           <!-- Card 2 – Patagônia -->
-          <article class="card" data-tipo="montanha">
+          <article class="card" data-tipo="montanha" data-destino="Patagônia">
             <img
               src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80"
               alt="Torres del Paine na Patagônia argentina"
@@ -91,7 +93,7 @@
           </article>
 
           <!-- Card 3 – Alpes Suíços -->
-          <article class="card" data-tipo="neve">
+          <article class="card" data-tipo="neve" data-destino="Alpes Suíços">
             <img
               src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80"
               alt="Montanhas cobertas de neve nos Alpes Suíços"
@@ -110,7 +112,7 @@
           </article>
 
           <!-- Card 4 – Fernando de Noronha -->
-          <article class="card" data-tipo="praia">
+          <article class="card" data-tipo="praia" data-destino="Fernando de Noronha">
             <img
               src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600&q=80"
               alt="Baía do Sancho em Fernando de Noronha"
@@ -129,7 +131,7 @@
           </article>
 
           <!-- Card 5 – Nepal -->
-          <article class="card" data-tipo="montanha">
+          <article class="card" data-tipo="montanha" data-destino="Nepal – Himalaia">
             <img
               src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80"
               alt="Vista do Himalaia com pico nevado ao fundo"
@@ -148,7 +150,7 @@
           </article>
 
           <!-- Card 6 – Lapônia -->
-          <article class="card" data-tipo="neve">
+          <article class="card" data-tipo="neve" data-destino="Lapônia Finlandesa">
             <img
               src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=600&q=80"
               alt="Aurora boreal sobre a Lapônia finlandesa"
@@ -172,8 +174,9 @@
       <!-- Formulário de Orçamento -->
       <section class="quote-form" id="orcamento">
         <h2>Solicite seu Orçamento</h2>
-        <p class="section-subtitle">Preencha o formulário abaixo e entraremos em contato em até 24 horas.</p>
-        <form action="#" method="post" class="form">
+        <p class="section-subtitle">Orçamento com cálculo automático por origem, destino e quantidade de passagens.</p>
+        <form action="#" method="post" class="form" id="budget-form">
+          <input type="hidden" id="orcamento-id" />
           <div class="form-group">
             <label for="nome">Nome completo <span class="required">*</span></label>
             <input
@@ -195,6 +198,40 @@
             />
           </div>
           <div class="form-group">
+            <label for="origem">Cidade de origem <span class="required">*</span></label>
+            <select id="origem" name="origem" required>
+              <option value="">Selecione a origem</option>
+              <option value="São Paulo">São Paulo</option>
+              <option value="Rio de Janeiro">Rio de Janeiro</option>
+              <option value="Brasília">Brasília</option>
+              <option value="Recife">Recife</option>
+              <option value="Porto Alegre">Porto Alegre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="destino">Destino <span class="required">*</span></label>
+            <select id="destino" name="destino" required>
+              <option value="">Selecione o destino</option>
+              <option value="Maldivas">Maldivas</option>
+              <option value="Patagônia">Patagônia</option>
+              <option value="Alpes Suíços">Alpes Suíços</option>
+              <option value="Fernando de Noronha">Fernando de Noronha</option>
+              <option value="Nepal – Himalaia">Nepal – Himalaia</option>
+              <option value="Lapônia Finlandesa">Lapônia Finlandesa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="passagens">Quantidade de passagens <span class="required">*</span></label>
+            <input
+              type="number"
+              id="passagens"
+              name="passagens"
+              min="1"
+              value="1"
+              required
+            />
+          </div>
+          <div class="form-group">
             <label for="data">Data pretendida da viagem <span class="required">*</span></label>
             <input
               type="date"
@@ -203,6 +240,7 @@
               required
             />
           </div>
+          <p id="estimativa" class="cost-preview">Selecione origem, destino e quantidade para calcular o custo.</p>
           <div class="form-group">
             <label for="mensagem">Mensagens adicionais</label>
             <textarea
@@ -212,8 +250,33 @@
               placeholder="Descreva seu destino preferido, número de viajantes, preferências especiais..."
             ></textarea>
           </div>
-          <button type="submit" class="btn-primary">Enviar Solicitação</button>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="salvar-orcamento">Salvar Orçamento</button>
+            <button type="button" class="btn-secondary" id="cancelar-edicao">Cancelar Edição</button>
+          </div>
         </form>
+      </section>
+
+      <section class="budgets" id="lista-orcamentos">
+        <h2>Orçamentos Salvos</h2>
+        <p class="section-subtitle">Edite ou remova registros já criados. Os dados ficam salvos no navegador.</p>
+        <div class="table-wrapper">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>Passagens</th>
+                <th>Data</th>
+                <th>Custo Total</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="budget-list"></tbody>
+          </table>
+        </div>
+        <p id="budget-empty" class="budget-empty">Nenhum orçamento cadastrado até o momento.</p>
       </section>
 
     </main>
@@ -228,6 +291,8 @@
         </address>
       </div>
     </footer>
+
+    <script src="app.js"></script>
 
   </body>
 </html>

@@ -228,6 +228,47 @@ nav a.active {
   font-size: 0.95rem;
 }
 
+/* ── Promotions, Insurance and Standard Itineraries ── */
+.promotions,
+.insurance-procedures,
+.standard-itineraries {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.promo-grid,
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.promo-card,
+.itinerary-card,
+.doc-card {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+.promo-card p,
+.itinerary-card p,
+.doc-card p,
+.doc-card li {
+  color: #546e7a;
+}
+
+.doc-card ol {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.doc-card li + li {
+  margin-top: 0.5rem;
+}
+
 /* ── Pricing Table ── */
 .pricing {
   background-color: var(--gray-light);
@@ -348,6 +389,7 @@ tbody tr:nth-child(even) {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
+  align-items: center;
 }
 
 .filter-label {
@@ -373,6 +415,30 @@ tbody tr:nth-child(even) {
   accent-color: var(--blue-mid);
   width: 1rem;
   height: 1rem;
+}
+
+.filter-status {
+  margin-top: 1rem;
+  color: #546e7a;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--blue-mid);
+  border: 2px solid var(--blue-mid);
+  border-radius: 50px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--blue-mid);
+  color: var(--white);
 }
 
 /* ── Destination Cards ── */
@@ -403,6 +469,10 @@ tbody tr:nth-child(even) {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+
+.card.is-hidden {
+  display: none;
 }
 
 .card img {
@@ -477,7 +547,8 @@ dd {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 0.75rem 1rem;
   border: 1.5px solid #b0bec5;
@@ -489,7 +560,8 @@ dd {
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: var(--blue-mid);
   box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.15);
@@ -505,9 +577,82 @@ dd {
 }
 
 .form .btn-primary {
-  width: 100%;
   font-size: 1.05rem;
   padding: 0.95rem;
+}
+
+.cost-preview {
+  background-color: #e8f0fe;
+  color: var(--blue-dark);
+  border-left: 4px solid var(--blue-mid);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.form-actions .btn-primary,
+.form-actions .btn-secondary {
+  flex: 1;
+}
+
+#cancelar-edicao {
+  display: none;
+}
+
+/* ── Budget list ── */
+.budgets {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+}
+
+.budget-table th,
+.budget-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.budget-table th {
+  background-color: var(--blue-dark);
+  color: var(--white);
+}
+
+.actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.btn-table {
+  background-color: var(--blue-mid);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-table.danger {
+  background-color: #c62828;
+}
+
+.budget-empty {
+  margin-top: 1rem;
+  color: #546e7a;
 }
 
 /* ── Footer ── */
@@ -564,6 +709,14 @@ footer a:hover {
 
   .form {
     padding: 2rem 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .budget-table {
+    min-width: 800px;
   }
 
   .footer-inner {
