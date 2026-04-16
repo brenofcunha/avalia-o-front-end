@@ -611,6 +611,19 @@ dd {
   padding: 4rem 2rem 5rem;
 }
 
+.markdown-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.markdown-status {
+  color: #546e7a;
+  font-size: 0.95rem;
+}
+
 .budget-table {
   width: 100%;
   border-collapse: collapse;
@@ -717,6 +730,11 @@ footer a:hover {
 
   .budget-table {
     min-width: 800px;
+  }
+
+  .markdown-actions {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .footer-inner {

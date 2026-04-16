@@ -57,7 +57,7 @@
           <!-- Card 1 – Maldivas -->
           <article class="card" data-tipo="praia" data-destino="Maldivas">
             <img
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80"
+              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRMs9tIkYatIN9qNUowmUF2cMGLBkAVflhLWFaNmBjXb6IHGlDJO6yE8G0viqb-xuyKyhN3B-J1hW0eNM4MC8IOkcw&s=19"
               alt="Vista aérea das ilhas Maldivas com águas cristalinas"
             />
             <div class="card-body">
@@ -76,7 +76,7 @@
           <!-- Card 2 – Patagônia -->
           <article class="card" data-tipo="montanha" data-destino="Patagônia">
             <img
-              src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80"
+              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRQOjTpO6inZW06lScYMrlAwJEqKPho_paBozW8z_ux6uSMNKrY7yiS1EwtwwrEX0-OSieAtM5dmrp-ymvlN17ygyU&s=19"
               alt="Torres del Paine na Patagônia argentina"
             />
             <div class="card-body">
@@ -95,7 +95,7 @@
           <!-- Card 3 – Alpes Suíços -->
           <article class="card" data-tipo="neve" data-destino="Alpes Suíços">
             <img
-              src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=600&q=80"
+              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQH3_r_aOZ3xIUXVDFqPHJM0g9d-mCfebNj-cLyEqcCyEdluoR-aqj1Nvbxq3G3n4EqUsGytdBoBbQQlusSGQaS4ygn&s=19"
               alt="Montanhas cobertas de neve nos Alpes Suíços"
             />
             <div class="card-body">
@@ -114,7 +114,7 @@
           <!-- Card 4 – Fernando de Noronha -->
           <article class="card" data-tipo="praia" data-destino="Fernando de Noronha">
             <img
-              src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600&q=80"
+              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQic3PchZsYylPRj7yOxwMTb3ZjbVFlxVG_kmF06uq06IsLFAaNCtp8CZhnREysYRdo13YHRLGVAvYhdYPf8u75D4c&s=19"
               alt="Baía do Sancho em Fernando de Noronha"
             />
             <div class="card-body">
@@ -133,7 +133,7 @@
           <!-- Card 5 – Nepal -->
           <article class="card" data-tipo="montanha" data-destino="Nepal – Himalaia">
             <img
-              src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80"
+              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQa6AcQzYAonD63w6tX58JsEih73eUIavEZGr4-I5KwbcaerK9zTA-QKBwDay3eECKkqpydLSPaiXhShnFp57qyu8o&s=19"
               alt="Vista do Himalaia com pico nevado ao fundo"
             />
             <div class="card-body">
@@ -152,7 +152,7 @@
           <!-- Card 6 – Lapônia -->
           <article class="card" data-tipo="neve" data-destino="Lapônia Finlandesa">
             <img
-              src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=600&q=80"
+              src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAF6VwutcNPfPBx6tGQxAz3H-WQQL7g3SO1jAU-yNEGXIrf-O_x5NPXWIKjaN8UBcvkDg-6PkoRT086UhKImiHALBHBr5D5uvAiFX45aUFw7OoneiW8AZsnd4INv8eJSIWOB5aiD=w675-h390-n-k-no"
               alt="Aurora boreal sobre a Lapônia finlandesa"
             />
             <div class="card-body">
@@ -251,7 +251,7 @@
             ></textarea>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn-primary" id="salvar-orcamento">Salvar Orçamento</button>
+            <button type="submit" class="btn-primary" id="salvar-orcamento">Finalizar Pedido</button>
             <button type="button" class="btn-secondary" id="cancelar-edicao">Cancelar Edição</button>
           </div>
         </form>
@@ -259,7 +259,11 @@
 
       <section class="budgets" id="lista-orcamentos">
         <h2>Orçamentos Salvos</h2>
-        <p class="section-subtitle">Edite ou remova registros já criados. Os dados ficam salvos no navegador.</p>
+        <p class="section-subtitle">Edite ou remova registros já criados. Os dados ficam salvos no navegador e podem ser exportados em arquivo Markdown.</p>
+        <div class="markdown-actions">
+          <button type="button" class="btn-secondary" id="exportar-markdown">Exportar Orçamentos (.md)</button>
+          <p id="markdown-status" class="markdown-status">Após salvar um orçamento, um arquivo Markdown local será gerado.</p>
+        </div>
         <div class="table-wrapper">
           <table class="budget-table">
             <thead>
