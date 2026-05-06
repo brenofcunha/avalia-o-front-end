@@ -1,21 +1,13 @@
 # Calculadora de IMC
 
-Este diretório contém dois arquivos principais:
+Este diretorio agora usa o componente React diretamente no navegador:
 
-- `CalculadoraIMC.jsx`: componente React da calculadora.
-- `imc.html`: página pronta para abrir no navegador e testar localmente.
+- `CalculadoraIMC.jsx`: componente React e ponto de montagem da interface.
+- `imc.html`: pagina base que carrega React por CDN e importa o `CalculadoraIMC.jsx`.
 
-## Como rodar manualmente
+## Como abrir em localhost
 
-
-
-Rodar com servidor local
-
-Acessar pelo navegador com `localhost`.
-
-### Usando Python
-
-1. Abra o terminal na pasta do projeto:
+1. Abra o terminal na pasta:
 
 ```powershell
 cd "c:\Users\Breno\OneDrive\Documentos\GitHub\avalia-o-front-end\Calculadora de IMC"
@@ -27,7 +19,7 @@ cd "c:\Users\Breno\OneDrive\Documentos\GitHub\avalia-o-front-end\Calculadora de 
 python -m http.server 5500
 ```
 
-Se necessário, no Windows você também pode usar:
+Se preferir, no Windows tambem funciona:
 
 ```powershell
 py -m http.server 5500
@@ -39,12 +31,12 @@ py -m http.server 5500
 http://localhost:5500/imc.html
 ```
 
-4. Para encerrar o servidor, pressione:
+4. Para encerrar o servidor:
 
 ```text
 Ctrl + C
 ```
 
-## Observação
+## Observacao
 
-O arquivo `imc.html` já carrega React por CDN, então não é necessário instalar dependências para testar a calculadora manualmente.
+O navegador passa a renderizar a aplicacao a partir do arquivo `CalculadoraIMC.jsx`, entao o `localhost` nao depende mais da versao duplicada dentro do HTML.

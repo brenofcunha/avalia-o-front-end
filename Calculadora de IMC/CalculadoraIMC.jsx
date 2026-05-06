@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+const { useState } = React;
 
 function classificarImc(imc) {
   if (imc < 18.5) {
@@ -24,7 +24,7 @@ function classificarImc(imc) {
   return "Obesidade grau III";
 }
 
-export default function CalculadoraIMC() {
+function CalculadoraIMC() {
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
   const [resultado, setResultado] = useState(null);
@@ -61,7 +61,7 @@ export default function CalculadoraIMC() {
   return (
     <section style={styles.wrapper}>
       <div style={styles.card}>
-        <h2 style={styles.title}>Calculadora de IMC</h2>
+        <h1 style={styles.title}>Calculadora de IMC</h1>
         <p style={styles.subtitle}>
           Digite o peso em quilogramas e a altura em metros.
         </p>
@@ -136,7 +136,7 @@ const styles = {
     borderRadius: "20px",
     backgroundColor: "#ffffff",
     boxShadow: "0 18px 45px rgba(31, 61, 115, 0.15)",
-    fontFamily: "Segoe UI, sans-serif"
+    fontFamily: '"Segoe UI", sans-serif'
   },
   title: {
     margin: "0 0 8px",
@@ -204,3 +204,6 @@ const styles = {
     color: "#16325c"
   }
 };
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<CalculadoraIMC />);
