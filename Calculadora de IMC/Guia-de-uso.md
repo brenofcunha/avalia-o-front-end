@@ -7,17 +7,11 @@ Este diretório contém dois arquivos principais:
 
 ## Como rodar manualmente
 
-### Opção 1: abrir direto no navegador
 
-Esta é a forma mais simples.
 
-1. Abra a pasta `Calculadora de IMC`.
-2. Dê dois cliques no arquivo `imc.html`.
-3. O navegador abrirá a calculadora de IMC.
+Rodar com servidor local
 
-## Opção 2: rodar com servidor local
-
-Essa opção é útil quando você prefere acessar pelo navegador com `localhost`.
+Acessar pelo navegador com `localhost`.
 
 ### Usando Python
 
